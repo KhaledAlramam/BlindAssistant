@@ -58,6 +58,10 @@ class CameraActivity : AppCompatActivity() {
         mediaPlayer = MediaPlayer.create(this, R.raw.firstscan)
         mediaPlayer2 = MediaPlayer.create(this, R.raw.done)
         mediaPlayer3 = MediaPlayer.create(this, R.raw.fivepounds)
+        mediaPlayer3.setOnCompletionListener {
+            Toast.makeText(this, "تم الكشف بنجاح", Toast.LENGTH_SHORT).show()
+            finish()
+        }
         handleSounds()
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
