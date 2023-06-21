@@ -73,12 +73,17 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun handleSounds() {
-        lifecycleScope.launch{
-            delay(5000)
+        lifecycleScope.launch {
+            delay(10000)
             mediaPlayer.start()
-            delay(5000)
+            Toast.makeText(
+                this@CameraActivity,
+                "تم الكشف عن العمله يرجى قلب العملة",
+                Toast.LENGTH_SHORT
+            ).show()
+            delay(20000)
             mediaPlayer2.start()
-            delay(4000)
+            delay(10000)
             mediaPlayer3.start()
         }
     }
@@ -153,6 +158,7 @@ class CameraActivity : AppCompatActivity() {
         super.onDestroy()
         mediaPlayer.release()
     }
+
     companion object {
         val TAG = "MainActivity"
     }
